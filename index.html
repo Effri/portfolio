@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#181a19"/>
     <meta name="color-scheme" content="dark"/>
+    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg"/>
     <meta name="description" content="effri — сайты, макеты и цифровые продукты на заказ. Портфолио работ, дизайн и разработка для бизнеса и новых проектов."/>
     <title>effri — сайты, макеты и цифровые продукты</title>
     <script>
       // Применяем сохранённый выбор до первого отображения страницы.
       try {
-        if (localStorage.getItem('portfolio-theme') === 'light') {
+        const readCookie = name => {
+          const item = document.cookie.split('; ').find(value => value.startsWith(name + '='));
+          return item ? decodeURIComponent(item.slice(name.length + 1)) : null;
+        };
+        const consent = JSON.parse(readCookie('portfolio_consent'));
+        if (consent?.version === 1 && consent.preferences && readCookie('portfolio_theme') === 'light') {
           document.documentElement.dataset.theme = 'light';
           document.querySelector('meta[name="theme-color"]').content = '#f3f0e8';
           document.querySelector('meta[name="color-scheme"]').content = 'light';
         }
       } catch {}
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-CSyXKLp0.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-C6V0Z2hv.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-B1GRslym.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Cn2F0lD3.css">
   </head>
   <body>
     <div id="root"></div>
